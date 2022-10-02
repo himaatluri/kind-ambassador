@@ -27,3 +27,7 @@
 ### Deployment
 
 ![deployment-arch](img/arch.jpg "ingress-targets")
+
+## Install metallb
+* exec install-metallb.sh
+* `docker network inspect -f '{{.IPAM.Config}}' kind` to grep the valid ranges for the LB
