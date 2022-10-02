@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: ambassador
+  name: app-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /home
+        pathType: Prefix
+        backend:
+          service:
+            name: home-svc
+            port:
+              number: 8080
+      - path: /others
+        pathType: Prefix
+        backend:
+          service:
+            name: others-svc
+            port:
+              number: 8080

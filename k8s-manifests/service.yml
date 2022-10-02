@@ -1,45 +1,25 @@
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: home-svc
-# spec:
-#   selector:
-#     app: home
-#   ports:
-#     - protocol: TCP
-#       port: 8080
-#       targetPort: 80
-# ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: others-svc
-# spec:
-#   selector:
-#     app: others
-#   ports:
-#     - protocol: TCP
-#       port: 8080
-#       targetPort: 80
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: home-lb
+  name: home-svc
 spec:
-  type: LoadBalancer
   selector:
     app: home
   ports:
-  - port: 80
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: others-lb
+  name: others-svc
 spec:
-  type: LoadBalancer
   selector:
     app: others
   ports:
-  - port: 80
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+---
