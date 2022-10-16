@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins
+  # namespace: jenkins
+spec:
+  type: NodePort #ClusterIP #default
+  selector:
+    app: jenkins
+  ports:
+    - port: 80
+      targetPort: 8080
+      nodePort: 32345
+      protocol: TCP

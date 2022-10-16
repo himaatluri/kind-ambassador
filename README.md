@@ -2,6 +2,8 @@
 
 * Create a kind Cluster
   Run the create-cluster.sh script to get one
+  or `kind create cluster --config kind.config.yaml`
+  `
   ```(shell)
   ➜  kind-ambassador git:(main) ✗ source create-cluster.sh 
         Creating cluster "kind-ambassador" ...
